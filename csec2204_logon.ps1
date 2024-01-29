@@ -1,3 +1,7 @@
+# THIS IS NOT A COMPLETE SCRIPT
+# This Script was used in school to create logons for an OU group
+# I wanted to save this for future use and so I can change it to suit my needs
+
 # This will create all logons from csv file
 # The information is from csec2204_logon_data.csv 
 # The admin_logon tab from the AD_master spreadsheet 
