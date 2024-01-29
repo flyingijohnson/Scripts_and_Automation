@@ -1,4 +1,7 @@
-﻿# This will list all iaropolch groups and for each group list members.
+# THIS IS NOT A COMPLETE SCRIPT
+# I USED THIS FOR A SCHOOL PROJECT FOR A SPECIFIC OU IN AD
+# 
+# This will list all iaropolch groups and for each group list members.
 # ss64.com
 # https://stackoverflow.com/questions/19122755/output-echo-a-variable-to-a-text-file use variable '$env:USERPROFILE'
 # https://lazyadmin.nl/powershell/get-adgroup/
@@ -10,6 +13,7 @@
 
 Import-Module ActiveDirectory
 
+# The following needs to change based on OU group. Will need to create a group name variable.
 $GLIST01 = "This is a list of iaropolch groups"
 $GLIST01 | Out-File C:\Users\IanIaropolch\Documents\powershell_reports\iaropolch_rpt02.txt -Append
 
