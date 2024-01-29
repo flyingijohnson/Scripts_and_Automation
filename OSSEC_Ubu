@@ -1,0 +1,45 @@
+#! /bin/bash
+# Install OSSEC onto Ubuntu
+# https://www.rapid7.com/blog/post/2017/06/30/how-to-install-and-configure-ossec-on-ubuntu-linux/
+# Author: IJ
+# 1/24/2024
+
+# Update Dependencies
+sudo apt-get update -y
+sudo apt-get upgrade -y
+
+# Install gcc, libc, apache, and PHP.
+apt-get install build-essential gcc make apache2 libapache2-mod-php7.0 php7.0 php7.0-cli php7.0-common apache2-utils unzip wget sendmail inotify-tools -y
+
+# Install OSSEC
+wget https://github.com/ossec/ossec-hids/archive/2.9.0.tar.gz
+
+# Unzip the tar file
+tar -xvzf 2.9.0.tar.gz
+
+# Change the directory to the extracted directory
+cd ossec-hids-2.9.0
+
+# run the OSSEC Install script
+sh install.sh
+
+# Will prompt for answers:
+# Select Language: en
+# Enter
+# Local Installation (Change for Splunk to server)
+# Install OSSEC HIDS in /var/ossec
+# Choose [n] to email notifications
+# [Enter] for integrity check daemon
+# [Enter] for rootkit detection engine
+# Enter to enable active response
+# [Enter] to  enable the firewall-drop response
+# n/y for white list ip address
+# Enter to enable remote Syslog
+# [Enter] to start installation
+
+# Start OSSEC:
+/var/ossec/bin/ossec-control start
+
+# to configure ossec:
+# nano /var/ossec/etc/ossec.conf
+
